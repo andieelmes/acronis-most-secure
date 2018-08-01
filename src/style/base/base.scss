@@ -1,0 +1,42 @@
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.all {
+  position: relative;
+  min-width: 320px;
+  font-family: $openSans;
+  background-color: #091575;
+}
+.inner {
+  margin: 0 auto;
+  max-width: 1000px;
+  position: relative;
+  padding: 0 25px;
+  overflow: hidden;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: #489dff;
+  &:hover {
+    color: lighten(#489dff, 5);
+  }
+}
+
+
+.button {
+  border: 0;
+  outline: 0;
+}
+
