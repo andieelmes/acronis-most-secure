@@ -1,0 +1,30 @@
+.footer {
+  position: relative;
+  padding: 67px 0;
+  text-align: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -879px;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 976px;
+    background-image: linear-gradient(50deg, #191048 0%, #2A05A5 95%);
+    transform: skewY(-30.8deg);
+    transform-origin: top left; 
+  }
+  &-copyright, &-legal {
+    font-size: 14px;
+    line-height: 16px;
+    color: white;
+    a {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+  &-copyright {
+    padding-top: 12px;
+  }
+}

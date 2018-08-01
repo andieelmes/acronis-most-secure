@@ -1,0 +1,72 @@
+.webinar {
+  padding-top: 106px;
+  position: relative;
+  z-index: 150;
+  &-header {
+    font-size: 43px;
+    line-height: 56px;
+    font-weight: 600;
+  }
+  &-name {
+    font-size: 14px;
+    line-height: 19px;
+    font-weight: 700;
+  }
+  &-status {
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 5px;
+  }
+  &-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url(../img/avatar.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: top;
+  }
+  &-content {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+  }
+  &-container {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    padding: 11px 10px;
+  }
+  &-info {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    padding-left: 23px;
+  }
+  &-text {
+    font-size: 16px;
+    line-height: 30px;
+    font-style: italic;
+    padding: 16px 0;
+  }
+  &-video {
+    margin: 0 auto;
+    position: relative;
+  }
+  &-top {
+    padding-bottom: 54px;
+  }
+  &-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url(../img/play.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
