@@ -61,4 +61,30 @@
     color: #4A4A4A;
     padding: 20px 27px 26px;
   }
+  &-bottom {
+    padding: 47px 0 120px;
+    position: relative;
+  }
+  &-logo {
+    display: inline-block;
+    vertical-align: top;
+    width: 33%;
+    position: absolute;
+    left: 0;
+    top: 47px;
+    z-index: 100;
+  }
+  &-content {
+    width: 65%;
+    margin-left: 33%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 72px 0 0 18.3%;
+  }
+  &-about {
+    font-size: 16px;
+    line-height: 30px;
+    color: white;
+    padding: 23px 0;
+  }
 }
