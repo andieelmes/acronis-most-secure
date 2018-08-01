@@ -12,13 +12,13 @@ img {
   position: relative;
   min-width: 320px;
   font-family: $openSans;
-  background-color: #091575;
+  background-color: white;
 }
 .inner {
   margin: 0 auto;
   max-width: 1000px;
   position: relative;
-  padding: 0 25px;
+  padding: 0 33px;
   overflow: hidden;
 }
 
@@ -40,3 +40,12 @@ a {
   outline: 0;
 }
 
+.arrow-right {
+  background-image: url(../img/arrow-right.svg);
+  width: 16px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-left: 6px;
+}

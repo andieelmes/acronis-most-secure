@@ -1,0 +1,47 @@
+.threats {
+  padding: 114px 0;
+  &-header {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight:400;
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    margin-right: 2.8%;
+  }
+  &-text {
+    font-size: 16px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    width: 52%;
+    padding-top: 13px;
+  }
+  &-slider {
+    padding: 89px 0;
+  }
+  &-item {
+    width: 32%;
+    margin-right: 1%;
+    display: inline-block;
+    vertical-align: top;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  &-image {
+    height: 238px;
+  }
+  &-title {
+    font-size: 24px;
+    line-height: 32px;
+    font-family: $acronis;
+    padding: 49px 0 11px;
+    padding-right: 50px;
+  }
+  &-caption {
+    font-size: 16px;
+    line-height: 30px;
+    color: #4A4A4A;
+  }
+}
