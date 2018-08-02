@@ -33,5 +33,56 @@
         text-decoration: underline;
       }
     }
+    &--dollars_mobile {
+      display: none;
+    }
+  }
+}
+
+
+@media(max-width:768px) {
+  .stats {
+    padding: 21px 0 50px;
+    &-title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &-items {
+      padding: 26px 0px 0;
+    }
+    &-item {
+      width: 100%;
+      padding-bottom: 14px;
+      &__header {
+        font-size: 84px;
+        line-height: 90px;
+        display: inline-block;
+        vertical-align: top;
+        width: 48%;
+        span {
+          font-size: 41px;
+          line-height: 90px;
+        }
+      }
+      &__caption {
+        font-size: 14px;
+        line-height: 20px;
+        display: inline-block;
+        vertical-align: top;
+        width: 48%;
+        padding-top: 7px;
+      }
+      &--dollars {
+        display: none;
+      }
+      &--dollars_mobile {
+        display: inline-block;
+        .stats-item{
+          &__header, &__caption {
+            width: 100%;
+          }
+        }
+      }
+    }
   }
 }

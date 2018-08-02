@@ -55,6 +55,27 @@
     background-color: #FF003E;
     margin-bottom: 17px;
     position: relative;
+    &--acronis {
+      .tests-passed {
+        width: 87%;
+      }
+    }
+    &--arcserve {
+      .tests-passed {
+        width: 16%;
+      }
+    }
+    &--veenam {
+      .tests-passed {
+        width: 14%;
+      }
+    }
+    &--veritas {
+      .tests-passed {
+        width: 20%;
+      }
+    }
+    
   }
   &-result {
     position: absolute;
@@ -121,4 +142,111 @@
       width: 100%;
     }
   }
+}
+
+@media(max-width:768px) {
+  .tests {
+    padding-top: 27px;
+    &-title {
+      font-size: 28px;
+      line-height: 40px;
+      max-width: 200px;
+    }
+    &-caption {
+      font-size: 14px;
+      line-height: 24px;
+      max-width: 300px;
+      padding: 4px 0;
+    }
+    &-images {
+      padding: 16px 0 13px;
+      display: inline-block;
+      vertical-align: top;
+      width: 67%;
+    }
+    &-image {
+      margin-right: 31px;
+    }
+    &-src {
+      display: inline-block;
+      vertical-align: top;
+      width: 28%;
+      padding: 29px 0;
+      line-height: 20px;
+    }
+    &-lines {
+      padding: 37px 0;
+    }
+    &-passed {
+      width: 100%;
+      bottom: 0;
+      top: auto;
+    }
+    &-line {
+      height: 422px;
+      width: 75px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 23px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &--acronis {
+        .tests-passed {
+          height: 87%;
+          width: 100%;
+        }
+      }
+      &--arcserve {
+        .tests-passed {
+          height:16%;
+          width: 100%;
+        }
+      }
+      &--veenam {
+        .tests-passed {
+          height: 14%;
+          width: 100%;
+        }
+      }
+      &--veritas {
+        .tests-passed {
+          height: 20%;
+          width: 100%;
+        }
+      }
+    }
+    &-name {
+      font-size: 12px;
+      text-align: center;
+      letter-spacing: 1px;
+      top: 29px;
+      left: 0;
+      right: 0;
+    }
+    &-result {
+      font-size: 14px;
+      top: auto;
+      bottom: 22px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+    &-desc{
+      padding: 10px 0;
+    }
+    &-note {
+      padding-left: 27px;
+      padding-right: 9%;
+    }
+    &-results {
+      display: block;
+      font-size: 14px;
+      line-height: 19px;
+      color: #26CDEA;
+      max-width: 300px;
+      padding-top: 15px;
+    }
+  }
+
 }

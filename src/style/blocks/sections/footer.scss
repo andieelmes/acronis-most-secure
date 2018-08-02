@@ -67,3 +67,23 @@
     height: 976px;
   }
 }
+
+@media(max-width:768px) {
+  .footer {
+    padding: 25px 0;
+    &:before {
+      bottom: -84vw;
+    }
+    &-logo {
+      width: 83px;
+      margin: 0 auto;
+    }
+    &-copyright, &-legal {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &-copyright {
+      padding-top: 13px;
+    }
+  }
+}

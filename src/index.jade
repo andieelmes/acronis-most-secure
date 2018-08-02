@@ -14,6 +14,8 @@ html
 
     link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic-ext,latin-ext" rel="stylesheet")
     link(rel="icon" type="image/png" href="favicon.ico" sizes="32x32")
+
+    link(rel='stylesheet', href='./libs/swiper/swiper.min.css')
     link(rel='stylesheet', href='./css/main.css?v=2')
 
     script(src='./libs/jquery-3.2.1.min.js')
@@ -23,8 +25,8 @@ html
     .all.acronis_most_secure_backup
       //1140
       //img(src="1440.png" style="position:absolute;opacity:0.5;top:0;margin-left:50%;left:-720px;z-index:900;width:1440px;")
-      //320
-      //img(src="m-company.png" style="position:absolute;opacity:0.5;top:0;margin-left:50%;left:-160px;z-index:900;width:320px;")
+      //414
+      //img(src="414.png" style="position:absolute;opacity:0.5;top:0;margin-left:50%;left:-207px;z-index:900;width:414px;")
       .top
         .inner
           header.top-content
@@ -43,29 +45,37 @@ html
             h2.stats-title Modern Threats Need Modern Defenses
             .stats-items
               .stats-item
-                .stats-item__header 93%
+                .stats-item__header 93
+                  span   %
                 .stats-item__caption Bankruptcy rate after 
                   nobr 10+ days 
                   | without data 
                   br
                   | Source 
                   a(href="#") Information Management
-              .stats-item
+              .stats-item.stats-item--dollars
                 .stats-item__header $100,000
                 .stats-item__caption Average cost of one hour of unplanned downtime 
                   br
                   | Source 
                   a(href="#") ITIC
               .stats-item
-                .stats-item__header 14 sec
+                .stats-item__header 14 
+                  span sec
                 .stats-item__caption Frequency of ransomware attacks by late 2019 
                   br
                   | Source 
                   a(href="#") Cybersecurity Ventures
+              .stats-item.stats-item--dollars_mobile
+                .stats-item__header $100,000
+                .stats-item__caption Average cost of one hour of unplanned downtime. 
+                  br
+                  | Source 
+                  a(href="#") ITIC
           .top-tests.tests
             .tests-text
               h2.tests-title Independent Lab Tests
-              .tests-caption Independent lab supports the statement that Acronis is most secure backup.
+              .tests-caption Independent lab supports the statement that Acronis is most secure backup.
               .tests-sources
                 .tests-images
                   .tests-image
@@ -77,19 +87,19 @@ html
             .tests-lines
               .test-items
                 .tests-line.tests-line--acronis
-                  span.tests-passed(style="width:87%")
+                  span.tests-passed
                   span.tests-result 87%
                   span.tests-name Acronis
                 .tests-line.tests-line--arcserve
-                  span.tests-passed(style="width:16%")
+                  span.tests-passed
                   span.tests-result 16%
                   span.tests-name Arcserve
                 .tests-line.tests-line--veenam
-                  span.tests-passed(style="width:14%")
+                  span.tests-passed
                   span.tests-result 14% 
                   span.tests-name Veenam
                 .tests-line.tests-line--veritas
-                  span.tests-passed(style="width:20%")
+                  span.tests-passed
                   span.tests-result 20%
                   span.tests-name Veritas
               .tests-desc
@@ -106,48 +116,53 @@ html
             .threats-items.js-threats-slider
                 .swiper-container
                   .swiper-wrapper
-                    a(href="#").threats-item
+                    a(href="#").threats-item.swiper-slide
                       .threats-image
                         img(src="img/threats1.png" width="255")
                       .threats-title Proactive Ransomware Protection
                       .threats-caption Acronis Active Protection uses artificial intelligence to distinguish suspicious activity from normal processes. It detects, stops and deflects an attack, protecting files from unauthorized encryption or alteration. Any files impacted are automatically restored.
-                    a(href="#").threats-item
+                    a(href="#").threats-item.swiper-slide
                       .threats-image
                         img(src="img/threats2.png" width="255")
                       .threats-title Blockchain Notarization 
                       .threats-caption Acronis Notary is a blockchain-based notary and electronic signature tool that ensures the integrity of files. It validates backups by computing a cryptographic hash that is unique to each file. With this built-in technology, there’s no doubt data is authentic. 
-                    a(href="#").threats-item
+                    a(href="#").threats-item.swiper-slide
                       .threats-image
                         img(src="img/threats3.png" width="255")
                       .threats-title Secure Cyber Protection
                       .threats-caption Acronis ensures end-to-end data protection that’s developed by a team of security experts who use a SDLC approach. Data security is at the core of their efforts, at every stage – resulting in 20 security-related patents and over 100 more for data protection.
-                  .swiper-pagination
-                  .swiper-button-next
+                  .swiper-elms
+                    .swiper-button-prev
+                    .swiper-pagination
+                    .swiper-button-next
+                  
               
       .cases
         .inner
           .cases-top
             h2.cases-title Case Studies
             .cases-slider
-              .cases-items
-                a(href="#").cases-item.cases-item--honda
-                  .cases-image
-                  .cases-desc Ready Honda Recovers from Ransomware with 
-                    nobr Acronis
-                      span.arrow-right
-                a(href="#").cases-item.cases-item--johnson
-                  .cases-image
-                  .cases-desc Johnson Electric Quadruples Backup Speed and Blocks Ransomware Attacks with Acronis 
-                    nobr Backup
-                      span.arrow-right
-                a(href="#").cases-item.cases-item--ridge
-                  .cases-image
-                  .cases-desc Granite Ridge Builders Protect Their Data from Ransomware with 
-                    nobr Acronis
-                      span.arrow-right
+              .cases-items.js-cases-slider
+                .swiper-container
+                  .swiper-wrapper
+                    a(href="#").cases-item.cases-item--honda.swiper-slide
+                      .cases-image
+                      .cases-desc Ready Honda Recovers from Ransomware with 
+                        nobr Acronis
+                          span.arrow-right
+                    a(href="#").cases-item.cases-item--johnson.swiper-slide
+                      .cases-image
+                      .cases-desc Johnson Electric Quadruples Backup Speed and Blocks Ransomware Attacks with Acronis 
+                        nobr Backup
+                          span.arrow-right
+                    a(href="#").cases-item.cases-item--ridge.swiper-slide
+                      .cases-image
+                      .cases-desc Granite Ridge Builders Protect Their Data from Ransomware with 
+                        nobr Acronis
+                          span.arrow-right
           .cases-bottom           
             .cases-content
-              h2.cases-title Secure Total Protection with Cloud Storage 
+              h2.cases-title Secure Total Protection with Cloud Storage 
               .cases-about Acronis Backup offers complete protection by extending data security to the cloud. Through its own secure cloud data centers, Acronis Storage supports storage-level encryption and data replication, and is compliant with the European Union’s (EU) General Data Protection Regulation (GDPR), ISO 27-001 and HIPAA. In addition, it employs the new Archive 3 storage format, which delivers heightened security and better protection from brute-force attacks.
             .cases-logo
               img(src="img/logo_case.png" width="303")
@@ -155,21 +170,27 @@ html
       .restore
         .inner
           .restore-content
-            h2.restore-header Restore from the Most Secure Backup
+            h2.restore-header Restore from the Most Secure Backup
           .restore-slider
-            .restore-items
-              .restore-item
-                .restore-title 21 Platforms Protected
-                .restore-caption Ensure recovery by securing all  system and consolidating all workloads. Acronis protects 21 platforms – physical, virtual or cloud. New applications can be integrated seamlessly into existing environments for continuous, complete data protection.
-              .restore-item
-                .restore-title Acronis Instant Restore 
-                .restore-caption Reduce recovery times and immediately start a Windows or Linux virtual machine directly from storage. Acronis Instant Restore enables your backup VM to start running in seconds, while it invisibly moves your data to the host in the background.
-              .restore-item
-                .restore-title Acronis Universal Restore 
-                .restore-caption Restore an entire system image to new, dissimilar hardware.  Acronis Universal Restore overcomes compatibility issues by analyzing the target system and injecting the drivers required to successfully boot the system. 
-              .restore-item
-                .restore-title Acronis vmFlashback 
-                .restore-caption Resume business after a failure up to 100 times faster with rapid VMware vSphere VM recovery. VMware’s Changed Block Tracking (CBT) technology tracks and saves only the changed blocks of information in a VM backup.
+            .restore-items.js-restore-slider
+                .swiper-container
+                  .swiper-wrapper
+                    .restore-item.swiper-slide
+                      .restore-title 21 Platforms Protected
+                      .restore-caption Ensure recovery by securing all  system and consolidating all workloads. Acronis protects 21 platforms – physical, virtual or cloud. New applications can be integrated seamlessly into existing environments for continuous, complete data protection.
+                    .restore-item.swiper-slide
+                      .restore-title Acronis Instant Restore 
+                      .restore-caption Reduce recovery times and immediately start a Windows or Linux virtual machine directly from storage. Acronis Instant Restore enables your backup VM to start running in seconds, while it invisibly moves your data to the host in the background.
+                    .restore-item.swiper-slide
+                      .restore-title Acronis Universal Restore 
+                      .restore-caption Restore an entire system image to new, dissimilar hardware.  Acronis Universal Restore overcomes compatibility issues by analyzing the target system and injecting the drivers required to successfully boot the system. 
+                    .restore-item.swiper-slide
+                      .restore-title Acronis vmFlashback 
+                      .restore-caption Resume business after a failure up to 100 times faster with rapid VMware vSphere VM recovery. VMware’s Changed Block Tracking (CBT) technology tracks and saves only the changed blocks of information in a VM backup.
+                  .swiper-elms
+                    .swiper-button-prev
+                    .swiper-pagination
+                    .swiper-button-next
       .awards
         .inner
           h2.awards-header Awards
@@ -205,6 +226,13 @@ html
           .webinar-video
             img(src="img/video.png")
             .webinar-play
+          .webinar-container.webinar-container--mobile
+            .webinar-about
+              .webinar-avatar
+              .webinar-info
+                .webinar-name Eric O'Neill
+                .webinar-status Former FBI counter-terrorism and counterintelligence operative
+            .webinar-text “The world has been turned upside down. Every business, no matter how large or small, needs innovative data protection that’s easy to use. A solution that also fights ransomware attacks and can restore data automatically would be a game-changing industry first.”
       footer.footer
         .inner
           .footer-logo
@@ -215,5 +243,5 @@ html
               
           
 
-
+  script(src='./libs/swiper/swiper.min.js')
   script(src='./js/main.js?v1')

@@ -73,3 +73,31 @@ export const initThreatsSlider = function() {
   _init()
   $(window).resize(() => _init())
 }
+
+export const initCasesSlider = function() {
+  const type = 'cases'
+  let swiper = null
+
+  const _init = () => {
+    swiper = $(window).width() < 1000
+      ? swiper || initSwiperInstance(type)
+      : destroySwiperInstance(swiper, type)
+  }
+
+  _init()
+  $(window).resize(() => _init())
+}
+
+export const initRestoresSlider = function() {
+  const type = 'restore'
+  let swiper = null
+
+  const _init = () => {
+    swiper = $(window).width() < 1000
+      ? swiper || initSwiperInstance(type)
+      : destroySwiperInstance(swiper, type)
+  }
+
+  _init()
+  $(window).resize(() => _init())
+}

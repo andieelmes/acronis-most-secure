@@ -13,10 +13,12 @@ if (detectIE()) {
 
 import {
   initThreatsSlider,
+  initCasesSlider,
 } from './sliders'
 
 
 initThreatsSlider()
+initCasesSlider()
 
 import { loadYoutube } from "./youtube";
 

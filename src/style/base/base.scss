@@ -50,3 +50,14 @@ a {
   display: inline-block;
   margin-left: 6px;
 }
+
+.swiper-slide {
+  box-sizing: border-box;
+}
+
+
+@media(max-width:768px) {
+  .inner {
+    padding: 0 15px;
+  }
+}

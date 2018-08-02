@@ -3329,21 +3329,13 @@ var reviewsAndArticlesConfig = (0, _extends3.default)({}, (0, _cloneDeep2.defaul
   slidesPerView: 3,
   slidesPerColumn: 1,
   loop: true,
-  navigation: {
-    nextEl: '.swiper-button-next'
-  },
+
   breakpoints: {
-    950: {
+    1000: {
       slidesPerView: 2
     },
     768: {
       slidesPerView: 1
-    }
-  },
-  on: {
-    touchStart: function touchStart() {
-      var $parent = $(this)[0].$el;
-      $parent.addClass('active');
     }
   }
 
@@ -3351,25 +3343,24 @@ var reviewsAndArticlesConfig = (0, _extends3.default)({}, (0, _cloneDeep2.defaul
   // from sharing common nav settings
   // ... — copies only first deep level of object
 });var swiperConfig = exports.swiperConfig = {
-  reviews: (0, _cloneDeep2.default)(reviewsAndArticlesConfig),
-  articles: (0, _cloneDeep2.default)(reviewsAndArticlesConfig),
-  resources: (0, _cloneDeep2.default)(defaultSwiperConfig),
-  solutions: (0, _extends3.default)({}, (0, _cloneDeep2.default)(defaultSwiperConfig), {
-    loop: true,
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 11
-      },
-      500: {
-        slidesPerView: 1,
-        spaceBetween: 11
-      }
+  threats: (0, _extends3.default)({}, (0, _cloneDeep2.default)(defaultSwiperConfig), {
+    spaceBetween: 16,
+    navigation: {
+      nextEl: '.js-threats-slider .swiper-button-next',
+      prevEl: '.js-threats-slider .swiper-button-prev'
     }
   }),
-  threats: (0, _extends3.default)({}, (0, _cloneDeep2.default)(defaultSwiperConfig), {
-    spaceBetween: 16
+  cases: (0, _extends3.default)({}, (0, _cloneDeep2.default)(defaultSwiperConfig), {
+    spaceBetween: 25
+  }),
+  restore: (0, _extends3.default)({}, (0, _cloneDeep2.default)(defaultSwiperConfig), {
+    spaceBetween: 16,
+    navigation: {
+      nextEl: '.js-restore-slider .swiper-button-next',
+      prevEl: '.js-restore-slider .swiper-button-prev'
+    }
   })
+
 };
 
 },{"babel-runtime/helpers/extends":2,"lodash/cloneDeep":131}],149:[function(require,module,exports){
@@ -3421,6 +3412,7 @@ if ((0, _detectIE.detectIE)()) {
    */
 
 (0, _sliders.initThreatsSlider)();
+(0, _sliders.initCasesSlider)();
 
 (0, _youtube.loadYoutube)();
 
@@ -3430,7 +3422,7 @@ if ((0, _detectIE.detectIE)()) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.initThreatsSlider = undefined;
+exports.initRestoresSlider = exports.initCasesSlider = exports.initThreatsSlider = undefined;
 
 var _utils = require('./utils');
 
@@ -3492,6 +3484,34 @@ var SimpleSwiperFactory = function SimpleSwiperFactory(_ref) {
 
 var initThreatsSlider = exports.initThreatsSlider = function initThreatsSlider() {
   var type = 'threats';
+  var swiper = null;
+
+  var _init = function _init() {
+    swiper = $(window).width() < 1000 ? swiper || initSwiperInstance(type) : destroySwiperInstance(swiper, type);
+  };
+
+  _init();
+  $(window).resize(function () {
+    return _init();
+  });
+};
+
+var initCasesSlider = exports.initCasesSlider = function initCasesSlider() {
+  var type = 'cases';
+  var swiper = null;
+
+  var _init = function _init() {
+    swiper = $(window).width() < 1000 ? swiper || initSwiperInstance(type) : destroySwiperInstance(swiper, type);
+  };
+
+  _init();
+  $(window).resize(function () {
+    return _init();
+  });
+};
+
+var initRestoresSlider = exports.initRestoresSlider = function initRestoresSlider() {
+  var type = 'restore';
   var swiper = null;
 
   var _init = function _init() {

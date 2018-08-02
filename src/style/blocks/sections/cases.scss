@@ -122,3 +122,59 @@
     top: -22vw;
   }
 }
+
+
+@media(max-width: 1000px) {
+  .cases {
+    &-item {
+      width: 300px;
+    }
+    &-items {
+      //margin-right: -33px;
+    }
+  }
+}
+
+@media(max-width:768px) {
+  .cases {
+    padding: 141px 0px 20px;
+    &::before {
+      top: -20vw;
+      height: 1233px;
+
+    }
+    &-title {
+      font-size: 28px;
+      line-height: 40px;
+    }
+    &-slider {
+      padding: 17px 0;
+    }
+    &-item {
+      min-height: 423px;
+    }
+    &-desc {
+      padding: 11px 27px 10px;
+    }
+    &-logo {
+      position: relative;
+      left: auto;
+      top: auto;
+      width: 192px;
+      margin: 0 auto;
+      display: block;
+    }
+    &-content {
+      margin-left: 0;
+      width: 100%;
+      padding: 24px 0;
+    }
+    &-about {
+      font-size: 14px;
+      line-height: 30px;
+    }
+    &-bottom {
+      padding-bottom: 0;
+    }
+  }
+}

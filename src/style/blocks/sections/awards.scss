@@ -26,3 +26,27 @@
     height: 113px;
   }
 }
+
+
+@media(max-width:768px) {
+  .awards {
+    padding-top: 80px;
+    &-header {
+      font-size: 28px;
+      line-height: 40px;
+    }
+    &-items {
+      padding: 56px 0;
+    }
+    &-item {
+      width: 48%;
+      margin-right: 0;
+      margin-bottom: 52px;
+    }
+    &-image {
+    }
+    &-caption {
+      padding-top: 11px;
+    }
+  }
+}

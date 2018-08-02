@@ -37,6 +37,10 @@
     vertical-align: top;
     width: 49%;
     padding: 11px 10px;
+    &--mobile {
+      display: none;
+      width: 100%;
+    }
   }
   &-info {
     display: inline-block;
@@ -68,5 +72,37 @@
     background-image: url(../img/play.svg);
     background-repeat: no-repeat;
     background-size: cover;
+  }
+}
+
+
+
+@media(max-width:768px) {
+  .webinar {
+    padding-top: 14px;
+    &-header {
+      font-size: 40px;
+      line-height: 56px;
+    }
+    &-content {
+      width: 100%;
+    }
+    &-container {
+      display: none;
+      &--mobile {
+        display: block;
+        color: white;
+        padding: 52px 0 10px;
+      }
+    }
+    &-top {
+      padding-bottom: 34px;
+    }
+    &-video {
+      height: 250px;
+    }
+    &-text {
+      padding: 24px 0;
+    }
   }
 }

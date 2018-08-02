@@ -91,3 +91,43 @@
     top: -40vw;
   }
 }
+
+@media(max-width:768px) {
+  .restore {
+    padding: 73px 0 40px;
+    &:before {
+      height: 675px;
+      top: -80vw;
+    }
+    &-header {
+      font-size: 42px;
+      line-height: 44px;
+    }
+    &-content {
+      width: 100%;
+    }
+    &-slider {
+      width: 100%;
+    }
+    &-items {
+      padding: 39px 0;
+    }
+    &-item {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 14px;
+      &:nth-child(2n) {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+    &-title {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    &-caption {
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+}
