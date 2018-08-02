@@ -55,3 +55,39 @@
     padding-top: 15px;
   }
 }
+
+@media(max-width:3500px) {
+  .restore:before {
+    top: -34vw;
+  }
+}
+
+@media(max-width:3000px) {
+  .restore:before {
+    top: -35vw;
+  }
+}
+
+@media(max-width:2500px) {
+  .restore:before {
+    top: -36vw;
+  }
+}
+
+@media(max-width:2000px) {
+  .restore:before {
+    top: -37vw;
+  }
+}
+
+@media(max-width:1700px) {
+  .restore:before {
+    top: -39vw;
+  }
+}
+
+@media(max-width:1500px) {
+  .restore:before {
+    top: -40vw;
+  }
+}

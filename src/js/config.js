@@ -17,32 +17,59 @@ export const defaultSwiperConfig = {
   watchSlidesProgress: true,
   observer: true,
   observeParents: true,
+  
+}
 
+
+
+const reviewsAndArticlesConfig = {
+    ...cloneDeep(defaultSwiperConfig),
+    spaceBetween: 11,
+    slidesPerView: 3,
+    slidesPerColumn: 1,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+    },
+    breakpoints: {
+      950: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 1,
+      },
+    },
+    on: {
+      touchStart: function () {
+        const $parent = $(this)[0].$el
+        $parent.addClass('active')
+      },
+    }
 }
 
 // Clone deep is needed to prevent multiple swipers 
 // from sharing common nav settings
 // ... — copies only first deep level of object
 export const swiperConfig = {
-  greetings: {
+  reviews: cloneDeep(reviewsAndArticlesConfig),
+  articles: cloneDeep(reviewsAndArticlesConfig),
+  resources: cloneDeep(defaultSwiperConfig),
+  solutions:  {
     ...cloneDeep(defaultSwiperConfig),
-    slidesPerView: 3,
-    spaceBetween: 1,
-    loop:true,
-    navigation: {
-      nextEl: '.js-swiper-next',
-    },
+    loop: true,
     breakpoints: {
-      1920: {
-        slidesPerView: 3,
-      },
-      1700: {
+      768: {
         slidesPerView: 2,
+        spaceBetween: 11,
       },
-      1000: {
-        spaceBetween: 20,
+      500: {
         slidesPerView: 1,
+        spaceBetween: 11,
       },
     },
   },
+  threats: {
+    ...cloneDeep(defaultSwiperConfig),
+    spaceBetween: 16,
+  }
 }

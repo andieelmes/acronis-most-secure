@@ -24,6 +24,9 @@
     color: white;
     a {
       color: white;
+      &:hover {
+        color:#26CDEA;
+      }
     }
   }
   &-images {
@@ -109,5 +112,13 @@
     font-size: 14px;
     line-height: 19px;
     color: #26CDEA;
+  }
+}
+
+@media(max-width:1000px) {
+  .tests {
+    &-text, &-lines {
+      width: 100%;
+    }
   }
 }

@@ -89,3 +89,36 @@
     padding: 23px 0;
   }
 }
+
+
+@media(max-width:3500px) {
+  .cases:before {
+    top: -26vw;
+  }
+}
+
+@media(max-width:3000px) {
+  .cases:before {
+    top: -25vw;
+  }
+}
+
+
+@media(max-width:2500px) {
+  .cases:before {
+    top: -24vw;
+  }
+}
+
+
+@media(max-width:2000px) {
+  .cases:before {
+    top: -23vw;
+  }
+}
+
+@media(max-width:1700px) {
+  .cases:before {
+    top: -22vw;
+  }
+}

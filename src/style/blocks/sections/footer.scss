@@ -28,3 +28,42 @@
     padding-top: 12px;
   }
 }
+
+
+@media(max-width:3500px) {
+  .footer:before {
+    bottom: -62vw;
+    height: 1476px;
+  }
+}
+
+@media(max-width:3000px) {
+  .footer:before {
+    bottom: -68vw;
+  }
+}
+
+@media(max-width:2500px) {
+  .footer:before {
+    bottom: -77vw;
+  }
+}
+
+@media(max-width:2000px) {
+  .footer:before {
+    bottom: -86vw;
+  }
+}
+
+@media(max-width:1700px) {
+  .footer:before {
+    bottom: -94vw;
+  }
+}
+
+@media(max-width:1500px) {
+  .footer:before {
+    bottom: -62vw;
+    height: 976px;
+  }
+}

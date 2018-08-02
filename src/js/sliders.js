@@ -1,3 +1,4 @@
+// Swiper sliders init
 
 import {elementExists} from './utils'
 import {swiperConfig} from './config'
@@ -9,15 +10,12 @@ import {swiperConfig} from './config'
  * @return {Swiper} instance of Swiper
  */
 const initSwiperInstance = (type) => {
-  
   const clsnm = `.js-${type}-slider`
   if (!elementExists(clsnm)) return false
 
   const element = `${clsnm} .swiper-container`
-  const settings = swiperConfig[type];
-
+  const settings = swiperConfig[type]
   return new Swiper(element, settings)
-
 }
 
 
@@ -39,6 +37,7 @@ const destroySwiperInstance = (swiper, selector) => {
   return null
 }
 
+
 /**
  * Creates instance of swiper 
  * and binds update event to window for updation
@@ -50,7 +49,7 @@ const destroySwiperInstance = (swiper, selector) => {
 const SimpleSwiperFactory = function({swiperSelector, filterCategory}) {
   let swiper = initSwiperInstance(swiperSelector)
 
-  $(window).on(`updateSwipers-greetings`, () => {
+  $(window).on(`updateSwipers-${filterCategory}`, () => {
     destroySwiperInstance(swiper, swiperSelector)
     swiper = initSwiperInstance(swiperSelector)
     swiper.update()
@@ -59,10 +58,18 @@ const SimpleSwiperFactory = function({swiperSelector, filterCategory}) {
   return swiper
 }
 
-export const initGreetingsSlider = function() {
-  const instance = new SimpleSwiperFactory({
-    swiperSelector: 'greetings',
-  })
+
+
+export const initThreatsSlider = function() {
+  const type = 'threats'
+  let swiper = null
+
+  const _init = () => {
+    swiper = $(window).width() < 1000
+      ? swiper || initSwiperInstance(type)
+      : destroySwiperInstance(swiper, type)
+  }
+
+  _init()
+  $(window).resize(() => _init())
 }
-
-
