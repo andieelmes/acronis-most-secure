@@ -76,6 +76,20 @@
 }
 
 
+@media(max-width:1000px) {
+  .webinar {
+    &-content, &-container {
+      width: 100%;
+    }
+    &-container {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 40px;
+      max-width: 700px;
+    }
+  }
+}
+
 
 @media(max-width:768px) {
   .webinar {
@@ -83,6 +97,7 @@
     &-header {
       font-size: 40px;
       line-height: 56px;
+      max-width: 500px;
     }
     &-content {
       width: 100%;
@@ -100,9 +115,18 @@
     }
     &-video {
       height: 250px;
+      overflow: hidden;
     }
     &-text {
       padding: 24px 0;
+    }
+  }
+}
+
+@media(max-width:650px) {
+  .webinar {
+    &-header {
+      max-width: 400px;
     }
   }
 }

@@ -68,6 +68,30 @@
   }
 }
 
+@media(max-width:1200px) {
+  .footer:before {
+    bottom: -70vw;
+  }
+}
+
+@media(max-width:1100px) {
+  .footer:before {
+    bottom: -76vw;
+  }
+}
+
+@media(max-width:1000px) {
+  .footer:before {
+    bottom: -85vw;
+  }
+}
+
+@media(max-width:900px) {
+  .footer:before {
+    bottom: -95vw;
+  }
+}
+
 @media(max-width:768px) {
   .footer {
     padding: 25px 0;

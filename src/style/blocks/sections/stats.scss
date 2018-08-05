@@ -58,7 +58,8 @@
         line-height: 90px;
         display: inline-block;
         vertical-align: top;
-        width: 48%;
+        width: 210px;
+        max-width: 48%;
         span {
           font-size: 41px;
           line-height: 90px;
@@ -86,3 +87,4 @@
     }
   }
 }
+

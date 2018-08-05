@@ -93,7 +93,7 @@ export const initRestoresSlider = function() {
   let swiper = null
 
   const _init = () => {
-    swiper = $(window).width() < 1000
+    swiper = $(window).width() < 768
       ? swiper || initSwiperInstance(type)
       : destroySwiperInstance(swiper, type)
   }

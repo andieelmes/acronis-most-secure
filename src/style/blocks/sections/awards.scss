@@ -39,14 +39,14 @@
       padding: 56px 0;
     }
     &-item {
-      width: 48%;
-      margin-right: 0;
+      width: 46%;
+      margin-right: 2%;
       margin-bottom: 52px;
-    }
-    &-image {
+      
     }
     &-caption {
       padding-top: 11px;
+      max-width: 180px;
     }
   }
 }

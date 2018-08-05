@@ -3515,7 +3515,7 @@ var initRestoresSlider = exports.initRestoresSlider = function initRestoresSlide
   var swiper = null;
 
   var _init = function _init() {
-    swiper = $(window).width() < 1000 ? swiper || initSwiperInstance(type) : destroySwiperInstance(swiper, type);
+    swiper = $(window).width() < 768 ? swiper || initSwiperInstance(type) : destroySwiperInstance(swiper, type);
   };
 
   _init();

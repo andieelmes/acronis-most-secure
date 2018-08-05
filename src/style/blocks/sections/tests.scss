@@ -162,7 +162,8 @@
       padding: 16px 0 13px;
       display: inline-block;
       vertical-align: top;
-      width: 67%;
+      width: 305px;
+      max-width: 67%;
     }
     &-image {
       margin-right: 31px;
@@ -184,7 +185,8 @@
     }
     &-line {
       height: 422px;
-      width: 75px;
+      width: calc(25% - 24px);
+      //width: 75px;
       display: inline-block;
       vertical-align: top;
       margin-right: 23px;
