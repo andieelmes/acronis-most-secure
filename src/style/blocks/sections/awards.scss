@@ -50,3 +50,25 @@
     }
   }
 }
+
+
+@media(max-width:400px) {
+  .awards {
+    padding-top: 148px;
+    &-header {
+      font-size: 26px;
+      line-height: 40px;
+    }
+    &-items {
+      padding: 54px 0;
+    }
+    &-caption {
+      font-size: 14px;
+      line-height: 19px;
+      padding-top: 0;
+    }
+    &-item {
+      margin-bottom: 11px;
+    }
+  }
+}

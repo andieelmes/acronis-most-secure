@@ -212,3 +212,50 @@
   }
 }
 
+
+@media(max-width:400px) {
+  .restore {
+    padding: 34px 0 40px;
+    &::before {
+      top: -49vw;
+      height: 861px;
+    }
+    &-header {
+      font-size: 33px;
+      line-height: 40px;
+    }
+    &-title {
+      font-size: 20px;
+      line-height: 32px;
+    }
+    &-items {
+      padding: 36px 0;
+    }
+    &-caption {
+      font-size: 16px;
+      line-height: 30px;
+      padding-top: 9px;
+    }
+    .swiper-button-prev, .swiper-button-next {
+      width: 21px;
+      background-size: 21px 13px;
+      margin-top: 60px;
+      margin-left: 10px;
+    }
+    .swiper-button-prev {
+      margin-right: 32px;
+    }
+    &-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+@media(max-width:350px) {
+  .restore {
+    &::before {
+      top: -88vw;
+    }
+  }
+}

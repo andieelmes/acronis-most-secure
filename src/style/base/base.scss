@@ -10,7 +10,8 @@ img {
 
 .all {
   position: relative;
-  min-width: 320px;
+  min-width: 312px;
+  max-width: 3500px;
   font-family: $openSans;
   background-color: white;
   overflow: hidden;

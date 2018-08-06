@@ -230,3 +230,37 @@
     }
   }
 }
+
+@media(max-width:400px) {
+  .cases {
+    padding: 91px 0px 20px;
+    &:before {
+      height: 1280px;
+    }
+    &-title {
+      font-size: 27px;
+      line-height: 40px;
+    }
+    &-slider {
+      padding-top: 15px;
+    }
+    &-image {
+      height: 227px;;
+    }
+    &-desc {
+      padding: 7px 11px 10px;
+      font-size: 14px;
+      line-height: 21px;  
+    }
+    &-item {
+      min-height: 328px;
+      width: 239px;
+    }
+    &-content {
+      padding: 50px 0px;
+    }
+    &-about {
+      padding: 20px 0;
+    }
+  }
+}

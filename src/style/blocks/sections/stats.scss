@@ -88,3 +88,35 @@
   }
 }
 
+@media(max-width:400px) {
+  .stats {
+    &-title {
+      font-size: 26px;
+      line-height: 38px;
+    }
+    &-items {
+      padding: 10px 0px 0;
+      margin: 0 -10px;
+      width: calc(100% + 20px);
+    }
+    &-item {
+      padding-bottom: 11px;
+      &__header {
+        font-size: 70px;
+        max-width: 54%;
+        span {
+          font-size: 32px;
+        }
+      }
+      &__caption {
+        font-size: 12px;
+        line-height: 20px;
+        padding-top: 3px;
+        width: 44%;
+      }
+      & + .stats-item--dollars_mobile {
+        margin-top: -11px;
+      }
+    }
+  }
+}
