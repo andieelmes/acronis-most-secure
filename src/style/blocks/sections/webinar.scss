@@ -79,6 +79,17 @@
     height: 465px;
     background-size: cover;
     background-position: center;
+    position: relative;
+    &:after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      background-color: rgba(#0B0B0B, 0.29);
+
+    }
   }
   &-top {
     padding-bottom: 54px;
@@ -94,6 +105,7 @@
     background-image: url(../img/play.svg);
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 100;
   }
 }
 

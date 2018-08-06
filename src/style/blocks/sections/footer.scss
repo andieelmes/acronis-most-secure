@@ -7,10 +7,10 @@
     content: "";
     position: absolute;
     bottom: -62vw;
+    height: 1476px;
     right: 0;
     left: 0;
     width: 100%;
-    height: 976px;
     background-image: linear-gradient(50deg, #191048 0%, #2A05A5 95%);
     transform: skewY(-30.8deg);
     transform-origin: top left; 
@@ -63,7 +63,7 @@
 
 @media(max-width:1500px) {
   .footer:before {
-    bottom: -62vw;
+    bottom: -68vw;
     height: 976px;
   }
 }

@@ -10,7 +10,7 @@
   &:before {
     content: "";
     position: absolute;
-    top: -22vw;
+    top: -26vw;
     bottom: 0;
     right: 0;
     left: 0;
@@ -45,6 +45,9 @@
       .cases-image {
         background-image: url(../img/case3.png);
       }
+    }
+    &:hover {
+      background-color: #FAFDFF;
     }
   }
   &-image {
@@ -135,9 +138,6 @@
     &-item {
       width: 300px;
     }
-    &-items {
-      //margin-right: -33px;
-    }
     .swiper-container {
       overflow: hidden;
     }
@@ -155,6 +155,9 @@
     }
     &-logo {
       width: 28%
+    }
+    &-slider {
+      margin-right: -33px;
     }
   }
 }
@@ -190,6 +193,7 @@
     }
     &-slider {
       padding: 17px 0;
+      margin-right: -15px;
     }
     &-item {
       min-height: 423px;

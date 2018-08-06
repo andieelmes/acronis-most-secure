@@ -46,6 +46,11 @@
     padding: 18px 20px;
     text-align: center;
     display: block;
+    transition: background 0.2s;
+    &:hover {
+      background: linear-gradient(14deg, rgba(255,255,255,0.02) 0%,rgba(38,219,255,0.36) 100%);
+      color: white;
+    }
   }
 }
 

@@ -64,10 +64,6 @@
   height: 11px;
   margin: 0 13px 0 4px;
 }
-.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
- 
-
-}
 .swiper-pagination-bullet-active {
   background-color: #0B3DEA;
 }
@@ -88,6 +84,7 @@
 .swiper-elms {
   text-align: center;
   margin: 0 auto;
+  padding-bottom: 6px;
 }
 
 .swiper-button-prev, .swiper-button-next {
@@ -99,7 +96,7 @@
   position: relative;
   margin-top: 52px;
   display: none;
-  top: auto;
+  top: 4px;
   margin-left: 71px;
 }
 
@@ -115,9 +112,6 @@
     &-item {
       width: 414px;
       max-width: 100%;
-    }
-    &-items {
-      //margin-right: -33px;
     }
     .swiper-container {
       overflow: hidden;
@@ -212,10 +206,11 @@
       width: 21px;
       background-size: 21px 13px;
       margin-top: 60px;
-      margin-left: 10px;
+      margin-left: 30px;
     }
     .swiper-button-prev {
-      margin-right: 32px;
+      margin-right: 47px;
+      margin-left: 0;
     }
   }
 }

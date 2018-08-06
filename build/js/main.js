@@ -3348,16 +3348,37 @@ var reviewsAndArticlesConfig = (0, _extends3.default)({}, (0, _cloneDeep2.defaul
     navigation: {
       nextEl: '.js-threats-slider .swiper-button-next',
       prevEl: '.js-threats-slider .swiper-button-prev'
+    },
+    pagination: {
+      clickable: true,
+      el: '.js-threats-slider .swiper-pagination'
+    },
+    breakpoints: {
+      1000: {
+        slidesPerView: 2
+      },
+      768: {
+        slidesPerView: 1
+      }
     }
   }),
   cases: (0, _extends3.default)({}, (0, _cloneDeep2.default)(defaultSwiperConfig), {
-    spaceBetween: 25
+    spaceBetween: 25,
+    pagination: {
+      clickable: true,
+      el: '.js-cases-slider .swiper-pagination'
+    }
+
   }),
   restore: (0, _extends3.default)({}, (0, _cloneDeep2.default)(defaultSwiperConfig), {
     spaceBetween: 16,
     navigation: {
       nextEl: '.js-restore-slider .swiper-button-next',
       prevEl: '.js-restore-slider .swiper-button-prev'
+    },
+    pagination: {
+      clickable: true,
+      el: '.js-restore-slider .swiper-pagination'
     }
   })
 
@@ -3413,6 +3434,7 @@ if ((0, _detectIE.detectIE)()) {
 
 (0, _sliders.initThreatsSlider)();
 (0, _sliders.initCasesSlider)();
+(0, _sliders.initRestoresSlider)();
 
 (0, _youtube.loadYoutube)();
 
@@ -3596,7 +3618,7 @@ var loadYoutube = exports.loadYoutube = function loadYoutube() {
 
 		for (var i = 0; i < youtube.length; i++) {
 
-				var source = "https://img.youtube.com/vi/" + youtube[i].dataset.embed + "/hqdefault.jpg";
+				var source = "https://img.youtube.com/vi/" + youtube[i].dataset.embed + "/hq720.jpg";
 
 				var bg = $(youtube[i]).append("<div class='webinar-bg' style='background-image:url(" + source + ")'></div>");
 

@@ -50,10 +50,27 @@ export const swiperConfig = {
       nextEl: '.js-threats-slider .swiper-button-next',
       prevEl: '.js-threats-slider .swiper-button-prev',
     },
+    pagination: {
+      clickable: true,
+      el: '.js-threats-slider .swiper-pagination',
+    },
+    breakpoints: {
+      1000: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 1,
+      },
+    },
   },
   cases: {
     ...cloneDeep(defaultSwiperConfig),
     spaceBetween: 25,
+    pagination: {
+      clickable: true,
+      el: '.js-cases-slider .swiper-pagination',
+    },
+    
   },
   restore: {
     ...cloneDeep(defaultSwiperConfig),
@@ -61,6 +78,10 @@ export const swiperConfig = {
     navigation: {
       nextEl: '.js-restore-slider .swiper-button-next',
       prevEl: '.js-restore-slider .swiper-button-prev',
+    },
+    pagination: {
+      clickable: true,
+      el: '.js-restore-slider .swiper-pagination',
     },
   },
   

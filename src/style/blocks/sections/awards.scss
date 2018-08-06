@@ -44,8 +44,11 @@
       margin-bottom: 52px;
       
     }
+    &-image {
+      height: auto;
+    }
     &-caption {
-      padding-top: 11px;
+      padding-top: 20px;
       max-width: 180px;
     }
   }
@@ -65,10 +68,10 @@
     &-caption {
       font-size: 14px;
       line-height: 19px;
-      padding-top: 0;
+      padding-top: 10px;
     }
     &-item {
-      margin-bottom: 11px;
+      margin-bottom: 20px;
     }
   }
 }
