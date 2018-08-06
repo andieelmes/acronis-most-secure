@@ -1,9 +1,9 @@
 export const loadYoutube = () => {
-  var youtube = document.querySelectorAll( ".js-youtube" );
+  var youtube = $(".js-youtube" );
 	
 	for (var i = 0; i < youtube.length; i++) {
 		
-    var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/hq720.jpg";
+    var source = "https://img.youtube.com/vi/"+ youtube.attr('data-embed') +"/hq720.jpg";
 
     var bg = $(youtube[i]).append( "<div class='webinar-bg' style='background-image:url("+source+")'></div>");
 		

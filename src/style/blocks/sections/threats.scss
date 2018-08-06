@@ -156,14 +156,20 @@
     &-slider {
       padding: 57px 0;
     }
+    &-image {
+      max-width: 380px;
+      margin: 0 auto;
+    }
     &-title {
       padding: 45px 0 14px;
-      max-width: 300px;
+      max-width: 380px;
+      margin: 0 auto;
     }
     &-caption {
       max-width: 380px;
       font-size: 16px;
       line-height: 30px;
+      margin: 0 auto;
     }
   }
 }
