@@ -25,3 +25,7 @@ initRestoresSlider()
 import { loadYoutube } from "./youtube";
 
 loadYoutube()
+
+import { animateSequence } from "./animation";
+
+animateSequence()

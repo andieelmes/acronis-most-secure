@@ -3293,6 +3293,63 @@ module.exports = stubFalse;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var animateSequence = exports.animateSequence = function animateSequence() {
+  var $element = $('.js-animation');
+  var imagePath = 'img/animation_jpg';
+  var totalFrames = 88;
+  var animationDuration = 2000;
+  var timePerFrame = animationDuration / totalFrames;
+  var timeWhenLastUpdate = void 0;
+  var timeFromLastUpdate = void 0;
+  var frameNumber = 0;
+
+  // 'step' function will be called each time browser rerender the content
+  // we achieve that by passing 'step' as a parameter to the 'requestAnimationFrame' function
+  function step(startTime) {
+    // 'startTime' is provided by requestAnimationName function, and we can consider it as current time
+    // first of all we calculate how much time has passed from the last time when frame was update
+    if (!timeWhenLastUpdate) timeWhenLastUpdate = startTime;
+    timeFromLastUpdate = startTime - timeWhenLastUpdate;
+
+    // then we check if it is time to update the frame
+    if (timeFromLastUpdate > timePerFrame) {
+      // and update it accordingly
+      $element.attr('src', imagePath + ('/Render for website_000' + frameNumber + '.jpg'));
+      // reset the last update time
+      timeWhenLastUpdate = startTime;
+
+      // then increase the frame number or reset it if it is the last frame
+      if (frameNumber >= totalFrames) {
+        frameNumber = 1;
+      } else {
+        frameNumber = frameNumber + 1;
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  // create a set of hidden divs
+  // and set their background-image attribute to required images
+  // that will force browser to download the images
+  $(document).ready(function () {
+    for (var i = 1; i < totalFrames + 1; i++) {
+      $('body').append('<div id="preload-image-' + i + '" style="background-image: url(\'' + imagePath + '/Render for website_000' + i + '.jpg\');"></div>');
+    }
+  });
+
+  // wait for images to be downloaded and start the animation
+  $(window).on('load', function () {
+    requestAnimationFrame(step);
+  });
+};
+
+},{}],149:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.swiperConfig = exports.defaultSwiperConfig = undefined;
 
 var _extends2 = require('babel-runtime/helpers/extends');
@@ -3384,7 +3441,7 @@ var reviewsAndArticlesConfig = (0, _extends3.default)({}, (0, _cloneDeep2.defaul
 
 };
 
-},{"babel-runtime/helpers/extends":2,"lodash/cloneDeep":131}],149:[function(require,module,exports){
+},{"babel-runtime/helpers/extends":2,"lodash/cloneDeep":131}],150:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3416,7 +3473,7 @@ var detectIE = exports.detectIE = function detectIE() {
     return false;
 };
 
-},{}],150:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 'use strict';
 
 var _detectIE = require('./detectIE');
@@ -3424,6 +3481,8 @@ var _detectIE = require('./detectIE');
 var _sliders = require('./sliders');
 
 var _youtube = require('./youtube');
+
+var _animation = require('./animation');
 
 if ((0, _detectIE.detectIE)()) {
   $('html').addClass('is-ie');
@@ -3438,7 +3497,9 @@ if ((0, _detectIE.detectIE)()) {
 
 (0, _youtube.loadYoutube)();
 
-},{"./detectIE":149,"./sliders":151,"./youtube":153}],151:[function(require,module,exports){
+(0, _animation.animateSequence)();
+
+},{"./animation":148,"./detectIE":150,"./sliders":152,"./youtube":154}],152:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3546,7 +3607,7 @@ var initRestoresSlider = exports.initRestoresSlider = function initRestoresSlide
   });
 };
 
-},{"./config":148,"./utils":152}],152:[function(require,module,exports){
+},{"./config":149,"./utils":153}],153:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3607,7 +3668,7 @@ var elementExists = exports.elementExists = function elementExists(selector) {
   return !!$(selector).length;
 };
 
-},{}],153:[function(require,module,exports){
+},{}],154:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3638,4 +3699,4 @@ var loadYoutube = exports.loadYoutube = function loadYoutube() {
 		};
 };
 
-},{}]},{},[150]);
+},{}]},{},[151]);
