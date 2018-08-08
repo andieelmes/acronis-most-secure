@@ -3295,7 +3295,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 var animateSequence = exports.animateSequence = function animateSequence() {
   var $element = $('.js-animation');
-  var imagePath = 'img/animation_jpg';
+  var type = 'png';
+  var imagePath = 'img/animation_' + type;
   var totalFrames = 88;
   var animationDuration = 2000;
   var timePerFrame = animationDuration / totalFrames;
@@ -3314,7 +3315,7 @@ var animateSequence = exports.animateSequence = function animateSequence() {
     // then we check if it is time to update the frame
     if (timeFromLastUpdate > timePerFrame) {
       // and update it accordingly
-      $element.attr('src', imagePath + ('/Render for website_000' + frameNumber + '.jpg'));
+      $element.attr('src', imagePath + ('/Render for website_000' + frameNumber + '.' + type));
       // reset the last update time
       timeWhenLastUpdate = startTime;
 
@@ -3334,13 +3335,13 @@ var animateSequence = exports.animateSequence = function animateSequence() {
   // that will force browser to download the images
   $(document).ready(function () {
     for (var i = 1; i < totalFrames + 1; i++) {
-      $('body').append('<div id="preload-image-' + i + '" style="background-image: url(\'' + imagePath + '/Render for website_000' + i + '.jpg\');"></div>');
+      $('body').append('<div id="preload-image-' + i + '" style="background-image: url(\'' + imagePath + '/Render for website_000' + i + '.' + type + '\');"></div>');
     }
   });
 
   // wait for images to be downloaded and start the animation
   $(window).on('load', function () {
-    requestAnimationFrame(step);
+    setTimeout(requestAnimationFrame(step), 1000);
   });
 };
 

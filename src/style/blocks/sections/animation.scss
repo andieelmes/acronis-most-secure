@@ -5,3 +5,21 @@
   max-width: 864px;
   z-index: 50;
 }
+
+@media(max-width:768px) {
+  .animation {
+    top: 172px;
+    width: 864px;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media(max-width:400px) {
+  .animation {
+    top: 172px;
+    width: 400px;
+    left: 0;
+    right: 0;
+  }
+}

@@ -1,6 +1,7 @@
 export const animateSequence = function() {
   const $element = $('.js-animation');
-  const imagePath = 'img/animation_jpg';
+  const type = 'png'
+  const imagePath = 'img/animation_' + type;
   const totalFrames = 88;
   const animationDuration = 2000;
   const timePerFrame = animationDuration / totalFrames;
@@ -19,7 +20,7 @@ export const animateSequence = function() {
     // then we check if it is time to update the frame
     if (timeFromLastUpdate > timePerFrame) {
       // and update it accordingly
-      $element.attr('src', imagePath + `/Render for website_000${frameNumber}.jpg`);
+      $element.attr('src', imagePath + `/Render for website_000${frameNumber}.${type}`);
       // reset the last update time
       timeWhenLastUpdate = startTime;
       
@@ -39,12 +40,12 @@ export const animateSequence = function() {
   // that will force browser to download the images
   $(document).ready(() => {
     for (var i = 1; i < totalFrames + 1; i++) {
-      $('body').append(`<div id="preload-image-${i}" style="background-image: url('${imagePath}/Render for website_000${i}.jpg');"></div>`);
+      $('body').append(`<div id="preload-image-${i}" style="background-image: url('${imagePath}/Render for website_000${i}.${type}');"></div>`);
     }
   });
 
   // wait for images to be downloaded and start the animation
   $(window).on('load', () => {
-    requestAnimationFrame(step);
+    setTimeout(requestAnimationFrame(step),1000);
   });
 }
