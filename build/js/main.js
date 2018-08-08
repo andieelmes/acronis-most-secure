@@ -3316,14 +3316,15 @@ var animateSequence = exports.animateSequence = function animateSequence() {
     if (timeFromLastUpdate > timePerFrame) {
       // and update it accordingly
       $element.attr('src', imagePath + ('/Render for website_000' + frameNumber + '.' + type));
+      console.log(frameNumber);
       // reset the last update time
       timeWhenLastUpdate = startTime;
 
       // then increase the frame number or reset it if it is the last frame
-      if (frameNumber >= totalFrames) {
+      if (frameNumber >= totalFrames - 1) {
         frameNumber = 1;
       } else {
-        frameNumber = frameNumber + 1;
+        frameNumber = frameNumber + 2;
       }
     }
 
@@ -3334,8 +3335,8 @@ var animateSequence = exports.animateSequence = function animateSequence() {
   // and set their background-image attribute to required images
   // that will force browser to download the images
   $(document).ready(function () {
-    for (var i = 1; i < totalFrames + 1; i++) {
-      $('body').append('<div id="preload-image-' + i + '" style="background-image: url(\'' + imagePath + '/Render for website_000' + i + '.' + type + '\');"></div>');
+    for (var i = 1; i < totalFrames + 1; i += 2) {
+      $('.js-animation-pictures').append('<div id="preload-image-' + i + '" style="background-image: url(\'' + imagePath + '/Render for website_000' + i + '.' + type + '\');"></div>');
     }
   });
 
