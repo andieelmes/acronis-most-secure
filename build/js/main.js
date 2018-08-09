@@ -3298,8 +3298,9 @@ var animateSequence = exports.animateSequence = function animateSequence() {
   var type = 'png';
   var imagePath = 'img/animation_' + type;
   var totalFrames = 88;
-  var animationDuration = 2000;
+  var animationDuration = 5000;
   var timePerFrame = animationDuration / totalFrames;
+  var totalTime = 88;
   var timeWhenLastUpdate = void 0;
   var timeFromLastUpdate = void 0;
   var frameNumber = 0;
@@ -3307,6 +3308,9 @@ var animateSequence = exports.animateSequence = function animateSequence() {
   // 'step' function will be called each time browser rerender the content
   // we achieve that by passing 'step' as a parameter to the 'requestAnimationFrame' function
   function step(startTime) {
+
+    //if (totalTime === 0) return false
+
     // 'startTime' is provided by requestAnimationName function, and we can consider it as current time
     // first of all we calculate how much time has passed from the last time when frame was update
     if (!timeWhenLastUpdate) timeWhenLastUpdate = startTime;
@@ -3316,7 +3320,7 @@ var animateSequence = exports.animateSequence = function animateSequence() {
     if (timeFromLastUpdate > timePerFrame) {
       // and update it accordingly
       $element.attr('src', imagePath + ('/Render for website_000' + frameNumber + '.' + type));
-      console.log(frameNumber);
+      //console.log(frameNumber);
       // reset the last update time
       timeWhenLastUpdate = startTime;
 
@@ -3325,6 +3329,7 @@ var animateSequence = exports.animateSequence = function animateSequence() {
         frameNumber = 1;
       } else {
         frameNumber = frameNumber + 2;
+        //totalTime = totalTime - 1;
       }
     }
 
@@ -3342,7 +3347,7 @@ var animateSequence = exports.animateSequence = function animateSequence() {
 
   // wait for images to be downloaded and start the animation
   $(window).on('load', function () {
-    setTimeout(requestAnimationFrame(step), 1000);
+    setTimeout(requestAnimationFrame(step), 500);
   });
 };
 

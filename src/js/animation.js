@@ -3,8 +3,9 @@ export const animateSequence = function() {
   const type = 'png'
   const imagePath = 'img/animation_' + type;
   const totalFrames = 88;
-  const animationDuration = 2000;
+  const animationDuration = 5000;
   const timePerFrame = animationDuration / totalFrames;
+  let totalTime = 88
   let timeWhenLastUpdate;
   let timeFromLastUpdate;
   let frameNumber = 0;
@@ -12,6 +13,9 @@ export const animateSequence = function() {
   // 'step' function will be called each time browser rerender the content
   // we achieve that by passing 'step' as a parameter to the 'requestAnimationFrame' function
   function step(startTime) {
+
+    //if (totalTime === 0) return false
+
     // 'startTime' is provided by requestAnimationName function, and we can consider it as current time
     // first of all we calculate how much time has passed from the last time when frame was update
     if (!timeWhenLastUpdate) timeWhenLastUpdate = startTime;
@@ -21,7 +25,7 @@ export const animateSequence = function() {
     if (timeFromLastUpdate > timePerFrame) {
       // and update it accordingly
       $element.attr('src', imagePath + `/Render for website_000${frameNumber}.${type}`);
-      console.log(frameNumber);
+      //console.log(frameNumber);
       // reset the last update time
       timeWhenLastUpdate = startTime;
       
@@ -30,7 +34,10 @@ export const animateSequence = function() {
         frameNumber = 1;
       } else {
         frameNumber = frameNumber + 2;
-      }        
+        //totalTime = totalTime - 1;
+      }
+      
+      
     }
     
     requestAnimationFrame(step);
@@ -47,6 +54,6 @@ export const animateSequence = function() {
 
   // wait for images to be downloaded and start the animation
   $(window).on('load', () => {
-    setTimeout(requestAnimationFrame(step),1000);
+    setTimeout(requestAnimationFrame(step),500);
   });
 }
