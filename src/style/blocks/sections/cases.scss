@@ -132,9 +132,18 @@
   }
 }
 
+@media(max-width:1200px) {
+  .cases:before {
+    top: -20vw;
+  }
+}
+
 
 @media(max-width: 1000px) {
   .cases {
+    &:before {
+      top: -22vw;
+    }
     &-item {
       width: 300px;
     }
