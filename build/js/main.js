@@ -3319,8 +3319,6 @@ var animateSequence = exports.animateSequence = function animateSequence() {
   // we achieve that by passing 'step' as a parameter to the 'requestAnimationFrame' function
   function step(startTime) {
 
-    //if (totalTime === 0) return false
-
     // 'startTime' is provided by requestAnimationName function, and we can consider it as current time
     // first of all we calculate how much time has passed from the last time when frame was update
     if (!timeWhenLastUpdate) timeWhenLastUpdate = startTime;
@@ -3330,7 +3328,6 @@ var animateSequence = exports.animateSequence = function animateSequence() {
     if (timeFromLastUpdate > timePerFrame) {
       // and update it accordingly
       $element.attr('src', imagePath + ('/Render for website_000' + frameNumber + '.' + type));
-      //console.log(frameNumber);
       // reset the last update time
       timeWhenLastUpdate = startTime;
 
@@ -3339,7 +3336,6 @@ var animateSequence = exports.animateSequence = function animateSequence() {
         frameNumber = 1;
       } else {
         frameNumber = frameNumber + 1;
-        //totalTime = totalTime - 1;
       }
     }
 
@@ -3357,7 +3353,7 @@ var animateSequence = exports.animateSequence = function animateSequence() {
 
   // wait for images to be downloaded and start the animation
   $(window).on('load', function () {
-    setTimeout(requestAnimationFrame(step), 500);
+    setTimeout(requestAnimationFrame(step), 1000);
   });
 };
 
@@ -3525,7 +3521,7 @@ if ((0, _detectIE.detectIE)()) {
 var stickyFill = new _sticky2.default({
   element: '.js-sticky-el',
   container: '.js-sticky-container',
-  breakpoint: 768,
+  breakpoint: 1,
   top: 504
 });
 

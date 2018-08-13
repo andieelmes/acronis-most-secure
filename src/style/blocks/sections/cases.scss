@@ -90,6 +90,7 @@
     line-height: 30px;
     color: white;
     padding: 23px 0;
+    min-height: 300px;
   }
 }
 
@@ -183,7 +184,10 @@
       width: 25%;
     }
     &:before {
-      height: 1050px;
+      height: 1020px;
+    }
+    &-about {
+      min-height: 0;
     }
   }
 }

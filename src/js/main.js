@@ -36,6 +36,6 @@ import StickyFill from './sticky'
 const stickyFill = new StickyFill({
   element: '.js-sticky-el', 
   container: '.js-sticky-container',
-  breakpoint: 768,
+  breakpoint: 1,
   top: 504,
 })
