@@ -2,10 +2,10 @@ export const animateSequence = function() {
   const $element = $('.js-animation');
   const type = 'png'
   const imagePath = 'img/animation_' + type;
-  const totalFrames = 88;
+  const totalFrames = 83;
   const animationDuration = 5000;
   const timePerFrame = animationDuration / totalFrames;
-  let totalTime = 88
+  let totalTime = 83
   let timeWhenLastUpdate;
   let timeFromLastUpdate;
   let frameNumber = 0;
@@ -33,7 +33,7 @@ export const animateSequence = function() {
       if (frameNumber >= totalFrames - 1) {
         frameNumber = 1;
       } else {
-        frameNumber = frameNumber + 2;
+        frameNumber = frameNumber + 1;
         //totalTime = totalTime - 1;
       }
       
@@ -47,7 +47,7 @@ export const animateSequence = function() {
   // and set their background-image attribute to required images
   // that will force browser to download the images
   $(document).ready(() => {
-    for (var i = 1; i < totalFrames + 1; i+=2) {
+    for (var i = 1; i < totalFrames + 1; i++) {
       $('.js-animation-pictures').append(`<div id="preload-image-${i}" style="background-image: url('${imagePath}/Render for website_000${i}.${type}');"></div>`);
     }
   });

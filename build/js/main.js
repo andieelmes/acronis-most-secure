@@ -3307,10 +3307,10 @@ var animateSequence = exports.animateSequence = function animateSequence() {
   var $element = $('.js-animation');
   var type = 'png';
   var imagePath = 'img/animation_' + type;
-  var totalFrames = 88;
+  var totalFrames = 83;
   var animationDuration = 5000;
   var timePerFrame = animationDuration / totalFrames;
-  var totalTime = 88;
+  var totalTime = 83;
   var timeWhenLastUpdate = void 0;
   var timeFromLastUpdate = void 0;
   var frameNumber = 0;
@@ -3338,7 +3338,7 @@ var animateSequence = exports.animateSequence = function animateSequence() {
       if (frameNumber >= totalFrames - 1) {
         frameNumber = 1;
       } else {
-        frameNumber = frameNumber + 2;
+        frameNumber = frameNumber + 1;
         //totalTime = totalTime - 1;
       }
     }
@@ -3350,7 +3350,7 @@ var animateSequence = exports.animateSequence = function animateSequence() {
   // and set their background-image attribute to required images
   // that will force browser to download the images
   $(document).ready(function () {
-    for (var i = 1; i < totalFrames + 1; i += 2) {
+    for (var i = 1; i < totalFrames + 1; i++) {
       $('.js-animation-pictures').append('<div id="preload-image-' + i + '" style="background-image: url(\'' + imagePath + '/Render for website_000' + i + '.' + type + '\');"></div>');
     }
   });
