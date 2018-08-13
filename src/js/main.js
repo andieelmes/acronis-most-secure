@@ -29,3 +29,13 @@ loadYoutube()
 import { animateSequence } from "./animation";
 
 animateSequence()
+
+
+import StickyFill from './sticky'
+
+const stickyFill = new StickyFill({
+  element: '.js-sticky-el', 
+  container: '.js-sticky-container',
+  breakpoint: 768,
+  top: 504,
+})
