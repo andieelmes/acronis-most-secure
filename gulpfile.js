@@ -15,13 +15,16 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     source = require('vinyl-source-stream'),
     babelify = require('babelify'),
-    babel = require('gulp-babel');
+    babel = require('gulp-babel'),
+    path = require('path');
+
+  var dest = path.resolve(__dirname, 'build/z/en-us')
 
   var path = {
     build: {
-      html: 'build',
-      js: 'build/js',
-      css: 'build/css',
+      html: dest,
+      js: dest + '/js/',
+      css: dest + '/css/',
     },
     src: {
       html: 'src/**/*.jade',
@@ -37,11 +40,11 @@ var gulp = require('gulp'),
 
   var config = {
     server: {
-      baseDir: "./build"
+      baseDir: dest
     },
     tunnel: false,
     host: 'localhost',
-    port: 7777,
+    port: 7778,
     logPrefix: "Building::",
     notify: false,
   };
@@ -87,8 +90,6 @@ var gulp = require('gulp'),
 
     // footer
     'company': formatUrl('company/'),
-    'contact': formatUrl('company/#contacts'),
-    
     'blog': formatUrl('blog/'),
     'management': formatUrl('company/#management'),
     'press': formatUrl('company/#press-center'),
@@ -103,6 +104,7 @@ var gulp = require('gulp'),
     'special_projects': formatUrl(''),
     'chronicles': formatUrl('company/acronis-chronicles/'),
     'motorsport': 'https://motorsport.acronis.com/',
+    'sitemap': formatUrl('sitemap/'),
 
     'support_2': formatUrl('support/'),
     'support_updates': formatUrl('support/updates/'),
@@ -129,11 +131,14 @@ var gulp = require('gulp'),
     'renewals': formatUrl('business/renewals/'),
     'account': 'https://account.acronis.com/',
 
-    'acronis_true_image_2018': formatUrl('z/personal/computer-backup/'),
+    'acronis_true_image_2018': formatUrl('personal/computer-backup/'),
     'acronis_true_image_2018_buy': formatUrl('z/personal/computer-backup/#buy'),
-    'acronis_true_image_2018_buy_page': formatUrl('z/personal/buy-backup/'),
+    'acronis_true_image_2018_buy_page': formatUrl('personal/buy-backup/'),
     'acronis_true_image_2018_try': formatUrl('z/personal/computer-backup/#try'),
   
+    'acronis_split_personal': formatUrl('z/overview.html#personal'),
+    'acronis_split_business': formatUrl('z/overview.html#business'),
+    'acronis_split_cloud': formatUrl('z/overview.html#cloud'),
 
     'acronis_disk_director_12': formatUrl('personal/disk-manager/'),
     'acronis_disk_director_advanced': formatUrl('business/enterprise-solutions/server-partition-management/'),
@@ -152,7 +157,7 @@ var gulp = require('gulp'),
 
     'acronis_vmware': formatUrl('business/backup/virtual-machine/'),
     'acronis_microsoft_hyper_v': formatUrl('business/backup/hyper-v/'),
-    'acronis_citrix_xenServer': formatUrl('/business/backup/xen/'),
+    'acronis_citrix_xenServer': formatUrl('business/backup/xen/'),
     'acronis_rhev': formatUrl('business/backup/rhv/'),
     'acronis_linux_kvm': formatUrl('business/backup/kvm/'),
     'acronis_oracle_vm_server': formatUrl('business/backup/oracle-vm/'),
@@ -175,6 +180,8 @@ var gulp = require('gulp'),
     'acronis_amazon_ec2': formatUrl('business/backup/cloud-vm/'),
 
     'acronis_more_products': formatUrl('business/overview/'),
+    'acronis_more_products_business': formatUrl('z/overview.html#business'),
+    'acronis_more_products_cloud': formatUrl('z/overview.html#cloud'),
 
     'acronis_storage': formatUrl('business/software-storage/'),
     'acronis_disaster_recovery_service': formatUrl('business/disaster-recovery-service/'),
@@ -200,12 +207,14 @@ var gulp = require('gulp'),
 
     'acronis_microsoft_environments': formatUrl('business/enterprise-solutions/microsoft/'),
 
+    
     'acronis_data_cloud': formatUrl('cloud/service-provider/platform/'),
     'acronis_data_cloud_try': formatUrl('cloud/service-provider/platform/?trial='),
 
     'acronis_backup_cloud': formatUrl('cloud/service-provider/backup/'),
     'acronis_disaster_recovery_cloud': formatUrl('cloud/service-provider/disaster-recovery/'),
     'acronis_files_cloud': formatUrl('cloud/service-provider/files/'),
+    'acronis_notary_cloud': formatUrl('cloud/service-provider/notary/'),
 
     'acronis_backup_advanced_for_vCloud': formatUrl('cloud/service-provider/vcloud/'),
     'acronis_professional_services': formatUrl('business/enterprise-solutions/professional-services/#service-providers'),
@@ -247,20 +256,22 @@ var gulp = require('gulp'),
 
     'acronis_automotive': formatUrl('lp/business/backup/automotive'),
 
+    'acronis_hard_disk_recovery_software': formatUrl('articles/hard-disk-recovery-software/'),
+    'acronis_imaging_software': formatUrl('articles/imaging-software/'),
+
+    'acronis_whats_raid10': formatUrl('articles/whats-raid10-and-why-should-i-use-it/'),
+    'acronis_online_data_recovery': formatUrl('articles/online-data-recovery/'),
+  
+
     'acronis_foundation': 'https://foundation.acronis.com',
 
-    'acronis_15': 'https://15.acronis.com',
 
-    'acronis_15_main': 'https://15.acronis.com',
-    'acronis_15_year': 'https://15.acronis.com/#history/',
-    'acronis_15_feedback': 'https://15.acronis.com/#feedback',
-    'acronis_15_greetings': 'https://15.acronis.com/#greetings',
+    'acronis_DR_Service': formatUrl('business/disaster-recovery-service/'),
 
-    
-    // 'acronis_15_main': 'https://andieelmes.ru/test/acronis-15',
-    // 'acronis_15_year': 'https://andieelmes.ru/test/acronis-15/#history/',
-    // 'acronis_15_feedback': 'https://andieelmes.ru/test/acronis-15/#feedback',
-    // 'acronis_15_greetings': 'https://andieelmes.ru/test/acronis-15/#greetings',
+    'acronis_partners': formatUrl('partners/'),
+    'acronis_support': formatUrl('support/'),
+
+    'acronis_main_z': formatUrl('z/'),
     
   }
 
@@ -292,7 +303,7 @@ var gulp = require('gulp'),
       }))
       .bundle()
       .pipe(source('main.js'))
-      .pipe(gulp.dest('build/js/'))
+      .pipe(gulp.dest(dest + '/js/'))
       .pipe(reload({stream: true}))
   });
 
