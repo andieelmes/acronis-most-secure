@@ -272,6 +272,14 @@ var gulp = require('gulp'),
     'acronis_support': formatUrl('support/'),
 
     'acronis_main_z': formatUrl('z/'),
+
+
+    'acronis_backup_trial': formatUrl('business/backup/trial?SFDCCampaignID=70150000001N3kD'),
+    'acronis_backup_honda': formatUrl('resource-center/resource/151/'),
+    'acronis_backup_johnson': formatUrl('resource-center/resource/286/'),
+    'acronis_backup_ridge': formatUrl('resource-center/resource/174/'),
+    'acronis_backup_legal': formatUrl('legal.html'),
+
     
   }
 
