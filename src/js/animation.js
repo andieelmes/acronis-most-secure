@@ -1,7 +1,7 @@
 export const animateSequence = function() {
   const $element = $('.js-animation');
   const type = 'png'
-  const imagePath = 'img/animation_' + type;
+  const imagePath = '../img/animation_' + type;
   const totalFrames = 83;
   const animationDuration = 5000;
   const timePerFrame = animationDuration / totalFrames;

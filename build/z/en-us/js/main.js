@@ -3306,7 +3306,7 @@ Object.defineProperty(exports, "__esModule", {
 var animateSequence = exports.animateSequence = function animateSequence() {
   var $element = $('.js-animation');
   var type = 'png';
-  var imagePath = 'img/animation_' + type;
+  var imagePath = '../img/animation_' + type;
   var totalFrames = 83;
   var animationDuration = 5000;
   var timePerFrame = animationDuration / totalFrames;
