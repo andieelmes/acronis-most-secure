@@ -1,0 +1,65 @@
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.all {
+  position: relative;
+  min-width: 312px;
+  max-width: 3500px;
+  font-family: $openSans;
+  background-color: white;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.inner {
+  margin: 0 auto;
+  max-width: 1000px;
+  position: relative;
+  padding: 0 33px;
+  overflow: hidden;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: #26CDEA;
+  &:hover {
+    color: lighten(#489dff, 5);
+  }
+}
+
+
+.button {
+  border: 0;
+  outline: 0;
+}
+
+.arrow-right {
+  background-image: url(../img/arrow-right.png);
+  width: 16px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.swiper-slide {
+  box-sizing: border-box;
+}
+
+
+@media(max-width:768px) {
+  .inner {
+    padding: 0 15px;
+  }
+}

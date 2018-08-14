@@ -1,0 +1,25 @@
+.animation {
+  position: absolute;
+  left: 29px;
+  top: -116px;
+  max-width: 981px;
+  z-index: 50;
+}
+
+@media(max-width:768px) {
+  .animation {
+    top: 50px;
+    width: 864px;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media(max-width:400px) {
+  .animation {
+    top: 172px;
+    width: 500px;
+    left: 0;
+    right: 0;
+  }
+}

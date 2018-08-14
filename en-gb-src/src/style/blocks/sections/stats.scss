@@ -1,0 +1,122 @@
+.stats {
+  padding: 106px 0 50px;
+  &-title {
+    font-size: 48px;
+    line-height: 56px;
+    color:white;
+    font-weight: 600;
+    max-width: 700px;
+  }
+  &-items {
+    padding: 81px 3px 0;
+  }
+  &-item {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    margin-right: 9%;
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &__header {
+      font-size: 43px;
+      color: #26CDEA;
+      font-weight: 600;
+    }
+    &__caption {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 600;
+      padding-top: 3px;
+      color: white;
+      a {
+        text-decoration: underline;
+      }
+    }
+    &--dollars_mobile {
+      display: none;
+    }
+  }
+}
+
+
+@media(max-width:768px) {
+  .stats {
+    padding: 21px 0 50px;
+    &-title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &-items {
+      padding: 26px 0px 0;
+    }
+    &-item {
+      width: 100%;
+      padding-bottom: 14px;
+      &__header {
+        font-size: 84px;
+        line-height: 90px;
+        display: inline-block;
+        vertical-align: top;
+        width: 210px;
+        max-width: 48%;
+        span {
+          font-size: 41px;
+          line-height: 90px;
+        }
+      }
+      &__caption {
+        font-size: 14px;
+        line-height: 20px;
+        display: inline-block;
+        vertical-align: top;
+        width: 48%;
+        padding-top: 7px;
+      }
+      &--dollars {
+        display: none;
+      }
+      &--dollars_mobile {
+        display: inline-block;
+        .stats-item{
+          &__header, &__caption {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:400px) {
+  .stats {
+    &-title {
+      font-size: 26px;
+      line-height: 38px;
+    }
+    &-items {
+      padding: 10px 0px 0;
+      margin: 0 -10px;
+      width: calc(100% + 20px);
+    }
+    &-item {
+      padding-bottom: 11px;
+      &__header {
+        font-size: 70px;
+        max-width: 54%;
+        span {
+          font-size: 32px;
+        }
+      }
+      &__caption {
+        font-size: 12px;
+        line-height: 20px;
+        padding-top: 3px;
+        width: 44%;
+      }
+      & + .stats-item--dollars_mobile {
+        margin-top: -11px;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import 'base/normalize/normalize';
+@import 'base/fonts/fonts';
+@import 'base/mixins/fonts';
+
+@import 'base/base';
+
+
+@import 'blocks/sections/top';
+@import 'blocks/sections/stats';
+@import 'blocks/sections/tests';
+@import 'blocks/sections/threats';
+@import 'blocks/sections/cases';
+@import 'blocks/sections/restore';
+@import 'blocks/sections/awards';
+@import 'blocks/sections/webinar';
+@import 'blocks/sections/footer';
+@import 'blocks/sections/animation';
